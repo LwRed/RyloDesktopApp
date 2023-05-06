@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="101px" height="101px" viewBox="0 0 101 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Timelapse 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Timelapse-8" transform="translate(0.738281, 0.117188)" fill="#FFFFFF">
+            <path d="M5.95580512e-05,50 L8,50 C8,73.1959595 26.8040405,92 50,92 C73.1959595,92 92,73.1959595 92,50 C92,26.8040405 73.1959595,8 50,8 L50,0 C77.614297,0 100.00006,22.3857625 100.00006,50 C100.00006,77.6142375 77.614297,100 50.0000596,100 C22.3858221,100 5.95580512e-05,77.6142375 5.95580512e-05,50 Z" id="Oval-43"></path>
+            <path d="M46,28.0042577 C46,25.7927672 47.7953562,24 50,24 L50,24 C52.209139,24 54,25.7890275 54,28.0042577 L54,51.9957423 C54,54.2072328 52.2046438,56 50,56 L50,56 C47.790861,56 46,54.2109725 46,51.9957423 L46,28.0042577 Z" id="Rectangle-68"></path>
+            <rect id="Rectangle-68" transform="translate(44.392305, 58.464102) rotate(-135.000000) translate(-44.392305, -58.464102) " x="40.3923048" y="46.4641016" width="8" height="24" rx="4"></rect>
+            <circle id="Capper" cx="4" cy="48" r="4"></circle>
+            <circle id="Capper" cx="50" cy="4" r="4"></circle>
+        </g>
+    </g>
+</svg>

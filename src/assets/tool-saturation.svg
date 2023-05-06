@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="101px" height="101px" viewBox="0 0 101 101" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Vibrance 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Vibrance-8" transform="translate(0.257812, 0.351562)">
+            <path d="M51.9594299,20.5794349 L57.1964339,46.1825656 C58.0093958,50.1570463 55.4464785,54.0380354 51.4719978,54.8509973 C50.9875972,54.9500793 50.4944302,55 50,55 C45.9432274,55 42.6545634,51.711336 42.6545634,47.6545634 C42.6545634,47.1601332 42.7044842,46.6669663 42.8035661,46.1825656 L48.0405701,20.5794349 C48.2619217,19.4972717 49.3186292,18.7994459 50.4007925,19.0207975 C51.1855929,19.1813249 51.7989025,19.7946345 51.9594299,20.5794349 Z" id="Rectangle-18" fill="#FFFFFF"></path>
+            <g id="Group-9" transform="translate(16.000000, 46.000000)" fill="#FFFFFF">
+                <rect id="Rectangle-21" transform="translate(6.000000, 4.000000) rotate(-270.000000) translate(-6.000000, -4.000000) " x="2" y="-2" width="8" height="12" rx="4"></rect>
+                <rect id="Rectangle-21" transform="translate(62.000000, 4.000000) rotate(-270.000000) translate(-62.000000, -4.000000) " x="58" y="-2" width="8" height="12" rx="4"></rect>
+            </g>
+            <g id="Group-9" transform="translate(49.646447, 27.019030) rotate(-45.000000) translate(-49.646447, -27.019030) translate(30.646447, 8.519030)" fill="#FFFFFF">
+                <rect id="Rectangle-21" transform="translate(31.121320, 32.878680) rotate(-270.000000) translate(-31.121320, -32.878680) " x="27.1213203" y="26.8786797" width="8" height="12" rx="4"></rect>
+                <rect id="Rectangle-21" transform="translate(4.514719, 6.757359) rotate(-180.000000) translate(-4.514719, -6.757359) " x="0.514718626" y="0.757359313" width="8" height="12" rx="4"></rect>
+            </g>
+            <circle id="Oval-18" stroke="#FFFFFF" stroke-width="8" cx="50" cy="50" r="46"></circle>
+        </g>
+    </g>
+</svg>

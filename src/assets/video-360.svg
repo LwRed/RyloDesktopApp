@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>modal-360-40</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="modal-360-40" transform="translate(-6.000000, -6.000000)" stroke="#111111" stroke-width="2">
+            <g id="360-Proper" transform="translate(26.000000, 26.000000) rotate(-315.000000) translate(-26.000000, -26.000000) translate(8.000000, 8.000000)">
+                <path d="M36,14.3976785 C34.3069064,6.18445704 26.8915498,0 18.0002392,0 C9.10809084,0 1.69217477,6.18562244 0,14.4" id="Outer-Top"></path>
+                <path d="M36,35.9976785 C34.3069064,27.784457 26.8915498,21.6 18.0002392,21.6 C9.10809084,21.6 1.69217477,27.7856224 0,36" id="Outer-Bottom" transform="translate(18.000000, 28.800000) rotate(-180.000000) translate(-18.000000, -28.800000) "></path>
+            </g>
+            <g id="360-Proper" transform="translate(26.000000, 26.000000) rotate(-45.451521) translate(-26.000000, -26.000000) translate(17.000000, 17.000000)">
+                <path d="M17.6717984,6.02581844 C16.4216962,2.51735172 13.0112977,0 9.0001196,0 C4.88702168,0 1.4056216,2.64690346 0.237359258,6.29515235" id="Outer-Top"></path>
+                <path d="M17.7757388,17.798454 C16.5579833,14.2332227 13.1186262,11.663595 9.06601349,11.663595 C4.93742855,11.663595 1.44530746,14.3304687 0.29015507,18" id="Outer-Bottom" transform="translate(9.032947, 14.831797) rotate(-180.000000) translate(-9.032947, -14.831797) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

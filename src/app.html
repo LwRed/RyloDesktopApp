@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rylo</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <script>
+    const m = require('mithril');
+    const {ipcRenderer, webFrame} = require('electron');
+    const User = require('./models/User');
+    const SignInView = require('./views/SignInView');
+    const AppView = require('./views/AppView');
+    const CrashReporter = require('./crashreporter');
+    const amplitude = require('amplitude-js/amplitude');
+    var url = require('url');
+    const App = require('./app');
+
+    webFrame.setVisualZoomLevelLimits(1, 1);
+    webFrame.setLayoutZoomLevelLimits(1, 1);
+
+    document.ondragover = (e) => {
+      e.preventDefault();
+    };
+
+    document.ondrop = (e) => {
+      ipcRenderer.send('open-file', e.dataTransfer.files[0].path);
+      e.preventDefault();
+    };
+
+    const params = url.parse(window.location.href, true).query;
+    App.setIsReleaseBuild(params.release == true);
+    
+    if(params.release == true) {
+      amplitude.getInstance().init('4c8e97c487fccf9a2385cb3c2f8a47e7') // Mobile
+    } else {
+      amplitude.getInstance().init('eaa5a6e7d15b3fc3faf9d123f728f261') // DebugEvents
+    }
+
+    CrashReporter.start(params.release == true);
+
+    m.route(document.body, '/app', {
+      '/app': AppView,
+    });
+  </script>
+</body>
+</html>

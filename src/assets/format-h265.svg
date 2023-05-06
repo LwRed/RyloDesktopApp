@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="100px" viewBox="0 0 80 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Battery-4" stroke="#000000" stroke-width="4">
+            <path d="M23.7616806,2 L2,19.9431216 L2,94 C2,96.209139 3.790861,98 6,98 L74,98 C76.209139,98 78,96.209139 78,94 L78,6 C78,3.790861 76.209139,2 74,2 L23.7616806,2 Z" id="Rectangle-22" transform="translate(40.000000, 50.000000) scale(-1, 1) translate(-40.000000, -50.000000) "></path>
+            <polyline id="Line-2" stroke-linecap="square" points="54.5 3.5 54.5 23.3095703 77.2138672 23.3095703"></polyline>
+            <polygon id="Line" stroke-linecap="round" stroke-linejoin="round" points="32 40 32 69.1972656 52.9462891 53.5065166"></polygon>
+        </g>
+    </g>
+</svg>

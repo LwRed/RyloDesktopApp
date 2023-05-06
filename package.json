@@ -1,0 +1,54 @@
+{
+  "name": "aurora",
+  "productName": "Rylo",
+  "version": "1.0.8",
+  "description": "Rylo Desktop App",
+  "main": "src/main.js",
+  "author": "Rylo Inc.",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --mac"
+  },
+  "build": {
+    "productName": "Rylo",
+    "appId": "com.rylo.app",
+    "electronDownload": {
+        "mirror": "https://npm.taobao.org/mirrors/electron/"
+    },
+    "extraResources": [
+      {
+        "from": "./library/",
+        "to": "app.asar.unpacked",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+        "output": "out"
+    },
+    "mac": {
+        "icon": "Rylo.icns"
+    },
+    "win": {
+        "icon": ""
+    }
+  },
+  "dependencies": {
+    "amplitude-js": "^4.5.2",
+    "core-js": "file:./bin/core-js",
+    "dateformat": "^3.0.3",
+    "deep-equal": "^1.0.1",
+    "electron-updater": "^4.0.0",
+    "exif": "^0.6.0",
+    "exif-date": "^2.0.1",
+    "mithril": "^1.1.6",
+    "npm": "^9.4.1",
+    "postinstall": "^0.8.0"
+  },
+  "devDependencies": {
+    "electron": "^1.6.6",
+    "electron-builder": "^22.4.1"
+  }
+}

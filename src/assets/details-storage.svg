@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="72px" viewBox="0 0 100 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>SD Card 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SD-Card-4" transform="translate(50.000000, 36.000000) scale(1, -1) rotate(-90.000000) translate(-50.000000, -36.000000) translate(14.000000, -14.000000)" fill="#111111">
+            <path d="M-8.8817842e-13,7.99335421 C-8.8817842e-13,3.57874658 3.58726941,7.99372018e-14 8.00284615,7.21536619e-14 L56.9971538,-1.42108547e-14 C61.4170037,-2.20019271e-14 65,3.57559919 65,7.99075354 L65,20 C65,20 72,25 72,25 C72,25 72,92.0092204 72,92.0092204 C72,96.4224061 68.4172013,100 64.0023206,100 L7.99767944,100 C3.58068305,100 -8.8817842e-13,96.4114635 -8.8817842e-13,92.0066458 L-8.8817842e-13,7.99335421 Z M4,8.00953511 L4,30.781994 L4,91.9940502 C4,94.2047279 5.79242202,96 8.00348663,96 L63.9965134,96 C66.2046235,96 68,94.2055686 68,91.9920254 C68,91.9920254 68,27 68,27 C68,27 61.1428571,22.6190476 61.1428571,22.6190476 L61.1428571,7.99425284 C61.1428571,5.78527256 59.3540274,4 57.1473941,4 L7.995463,4 C5.78865949,4 4,5.79513002 4,8.00953511 Z" id="Combined-Shape"></path>
+            <rect id="Rectangle" x="16" y="16" width="4" height="20" rx="1"></rect>
+            <rect id="Rectangle" x="28" y="16" width="4" height="20" rx="1"></rect>
+            <rect id="Rectangle" x="40" y="16" width="4" height="20" rx="1"></rect>
+        </g>
+    </g>
+</svg>

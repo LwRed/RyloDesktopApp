@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="100px" viewBox="0 0 102 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Audio On 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Audio-On-4" stroke="#111111" stroke-width="4">
+            <path d="M89.5,23.5 C89.5,23.5 99.5,34.9771169 99.5,49.1514112 C99.5,63.3257056 89.5,77.5 89.5,77.5" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M79.5,32.5156845 C79.5,32.5156845 86.5,40.1670957 86.5,49.6166253 C86.5,59.0661549 79.5,68.5156845 79.5,68.5156845" id="Small" stroke-linecap="round"></path>
+            <path d="M2,35.9932448 L2,65.0067552 C2,68.3113836 4.68590582,71 7.9913008,71 L27.8114995,71 L51.9211476,94.420801 C56.988277,99.3431553 60,98.0660819 60,90.9908611 L60,8.9972029 C60,1.9473122 57.0872333,0.741193841 52.0990512,5.72937594 L27.8284271,30 L7.9913008,30 C4.68716485,30 2,32.6860623 2,35.9932448 Z" id="Rectangle-11"></path>
+        </g>
+    </g>
+</svg>

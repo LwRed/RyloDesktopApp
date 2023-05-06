@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Shadows 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shadows-8">
+            <path d="M23.390873,38.390873 C35.8415993,27.0942205 55.492411,27.6287174 67.390873,40.390873 C79.8881078,52.0716042 80.6561462,71.1878766 69.390873,84.390873 C69.0300931,85.0008728 66.7968505,86.0261714 65.390873,84.390873 C58.3459301,77.715918 31.1642105,50.5010976 23.390873,42.390873 C21.9678983,41.144109 22.3280551,39.2587169 23.390873,38.390873 Z" id="Combined-Shape" fill="#FFFFFF" transform="translate(49.890873, 57.890873) scale(1, -1) rotate(-45.000000) translate(-49.890873, -57.890873) "></path>
+            <circle id="Oval-18" stroke="#FFFFFF" stroke-width="8" cx="50" cy="50" r="46"></circle>
+        </g>
+    </g>
+</svg>

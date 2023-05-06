@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="101px" height="100px" viewBox="0 0 101 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Motion Blur 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Motion-Blur-8" transform="translate(4.000000, 4.000000)" stroke="#FFFFFF" stroke-width="8">
+            <g id="Arrow" transform="translate(23.000000, 0.000000)">
+                <path d="M23,0.194824219 L0.372583002,22.8222412" id="Line-21"></path>
+                <path d="M45.627417,0.194824219 L23,22.8222412" id="Line-21" transform="translate(34.313708, 11.508533) scale(-1, 1) translate(-34.313708, -11.508533) "></path>
+                <path d="M23,1.27783203 L23,73.277832" id="Line-22"></path>
+            </g>
+            <g id="Arrow" transform="translate(0.000000, 48.000000)">
+                <path d="M13.8,0.116894531 L0.223549801,13.6933447" id="Line-21"></path>
+                <path d="M27.3764502,0.116894531 L13.8,13.6933447" id="Line-21" transform="translate(20.588225, 6.905120) scale(-1, 1) translate(-20.588225, -6.905120) "></path>
+                <path d="M13.8,0.766699219 L13.8,43.9666992" id="Line-22"></path>
+            </g>
+            <g id="Arrow" transform="translate(65.000000, 48.000000)">
+                <path d="M13.8,0.116894531 L0.223549801,13.6933447" id="Line-21"></path>
+                <path d="M27.3764502,0.116894531 L13.8,13.6933447" id="Line-21" transform="translate(20.588225, 6.905120) scale(-1, 1) translate(-20.588225, -6.905120) "></path>
+                <path d="M13.8,0.766699219 L13.8,43.9666992" id="Line-22"></path>
+            </g>
+        </g>
+    </g>
+</svg>

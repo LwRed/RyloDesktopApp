@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Smoothed 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Smoothed-8" stroke="#FFFFFF" stroke-width="8">
+            <path d="M5,47 C5,47 12.7459062,55 25,55 C37.2540938,55 50,47 50,47 C50,47 62.3728547,39 75,39 C87.6271453,39 95,47 95,47" id="Line" stroke-linecap="round"></path>
+            <circle id="Oval-10" cx="50" cy="50" r="46"></circle>
+        </g>
+    </g>
+</svg>

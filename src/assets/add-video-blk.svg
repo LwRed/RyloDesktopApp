@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>add-video</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-video" transform="translate(1.000000, 1.000000)" stroke="#111111">
+            <circle id="Oval-10" stroke-width="2" cx="49" cy="49" r="49"></circle>
+            <g id="Group-3" transform="translate(49.000000, 48.292893) rotate(45.000000) translate(-49.000000, -48.292893) translate(31.500000, 30.792893)" fill="#111111" fill-rule="nonzero">
+                <rect id="Hor" transform="translate(17.798990, 17.798990) scale(-1, 1) rotate(45.000000) translate(-17.798990, -17.798990) " x="-5.70100998" y="17.2989898" width="47" height="1" rx="0.5"></rect>
+                <rect id="Hor" transform="translate(17.798990, 17.798990) scale(-1, 1) rotate(135.000000) translate(-17.798990, -17.798990) " x="-5.70101016" y="17.29899" width="47" height="1" rx="0.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

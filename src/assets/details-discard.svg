@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="99px" height="100px" viewBox="0 0 99 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Discard Edits 4</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Discard-Edits-4" fill="#111111">
+            <rect id="Rectangle" transform="translate(78.213203, 21.213203) rotate(-315.000000) translate(-78.213203, -21.213203) " x="76.2132034" y="-6.78679656" width="4" height="56" rx="2"></rect>
+            <rect id="Rectangle" transform="translate(78.213203, 21.213203) rotate(-45.000000) translate(-78.213203, -21.213203) " x="76.2132034" y="-6.78679656" width="4" height="56" rx="2"></rect>
+            <circle id="Oval-8" cx="88" cy="65" r="2"></circle>
+            <circle id="Oval-8" cx="35" cy="12" r="2"></circle>
+            <path d="M35,10 L35,14 L16.0003313,14 C9.38024902,14 4,19.3727313 4,26.0003313 L4,83.9996687 C4,90.619751 9.37273132,96 16.0003313,96 L73.9996687,96 C80.619751,96 86,90.6272687 86,83.9996687 L86,65 L90,65 L90,84.0005601 C90,92.8368067 82.8437636,100 74.0005601,100 L15.9994399,100 C7.16319325,100 0,92.8437636 0,84.0005601 L0,25.9994399 C0,17.1631933 7.15623642,10 15.9994399,10 L35,10 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

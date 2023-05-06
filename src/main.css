@@ -1,0 +1,1171 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+	background-color: #161616;
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:not(input):not(textarea):not(select),
+:not(input):not(textarea):not(select)::after,
+:not(input):not(textarea):not(select)::before {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+/* Prevent dragging application on input elements */
+input, select, button, label {
+    -webkit-app-region: no-drag;
+    -webkit-user-drag: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+/* FIXME: This needs to be scoped instead of global */
+h1 {
+    font-weight: 200;
+    font-size: 24pt;
+    padding:16px 0;
+    letter-spacing:0.5px;
+}
+
+/* FIXME: This needs to be scoped instead of global */
+h2 {
+    font-weight: normal;
+    font-size: 10pt;
+    color: #999;
+}
+
+h3 {
+	font-weight: 600;
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing:0.5px;
+    padding:32px 0;
+    opacity: 0.3;
+}
+
+input {
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    outline: none;
+}
+
+input[type=range] {
+    --range-from: 0%;
+    --range-to: 0%;
+    --range-color: #fff;
+    --track-color: #444;
+
+    -webkit-appearance: none;
+    background-color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: white;
+    margin-top: -6px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    border: none;
+    border-radius: 1px;
+
+    background: linear-gradient(to right,
+        var(--track-color) var(--range-from),
+        var(--range-color) var(--range-from),
+        var(--range-color) var(--range-to),
+        var(--track-color) var(--range-to)
+    );
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body {
+    -webkit-app-region: drag;
+    display: flex;
+}
+
+form.signin {
+    display: block;
+    margin: auto;
+}
+
+form.signin input[type=email], input[type=password] {
+    display: block;
+    font-size: 15pt;
+    width: 400px;
+    height: 20px;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    background-color: #333;
+    border: 0px solid black;
+    color: white;
+}
+
+form.signin input[type=submit] {
+    float: right;
+    padding: 15px 30px;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #555;
+    background-color: white;
+    border-radius: 3px;
+    border: 0px solid black;
+    transition: all 0.4s ease-in-out;
+}
+
+form.signin input[type=submit]:disabled {
+    opacity: 0.7;
+}
+
+Library {
+    background-color: black;
+    width: 284px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: margin-left 0.4s ease-in-out;
+    margin-right:16px;
+}
+
+Library.hidden {
+    margin-left: -284px;
+}
+
+Library > nav {
+    display: flex;
+    padding: 54px 16px 0 16px;
+    margin: 0;
+    flex-shrink: 0;
+    border-bottom: 1px solid #222;
+    margin-bottom: 8px;
+}
+
+Library > nav input {
+    display: none;
+}
+
+Library > nav label {
+    width: 100%;
+    text-align: center;
+}
+
+Library > nav label:hover {
+    opacity: 1;
+}
+
+Library > nav input + img {
+    max-height: 17px;
+    opacity: 0.3;
+}
+
+Library > nav input:checked + img {
+    opacity: 1;
+}
+
+Library > nav input + img + p {
+    text-transform: uppercase;
+    font-weight:600;
+    font-size:9px;
+    padding: 8px 0 32px 0;
+    margin-bottom: -1px;
+    border-bottom: 1px solid transparent;
+    opacity: 0.3;
+}
+
+Library > nav input:checked + img + p {
+    opacity: 1;
+    border-bottom: 2px solid white;
+    padding-bottom:32px;
+}
+
+Library > section {
+    display: flex;
+    flex-grow: 1;
+    width: 200%;
+    margin-left: 0;
+    transition: margin-left 0.25s ease-in-out;
+}
+
+Library > section > div {
+    display: block;
+    align-items: stretch;
+    flex-grow: 0;
+    width: 100%;
+    overflow: scroll;
+    padding-top:6px;
+    position:relative;
+}
+
+Library .empty h2 {
+    color: #FFF;
+    font-size: 8pt;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 16px 0;
+}
+
+Library .empty h3 {
+    color: #FFF;
+    font-size: 7pt;
+    line-height: 12pt;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 44px;
+    opacity: 0.7;
+}
+
+Library .empty img {
+    display: block;
+    width: 144px;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+Library .sd-helper {
+	position: absolute;
+	bottom:32px;
+}
+
+Library .sd-helper p {
+    opacity: 0.36;
+    font-size: 9pt;
+    line-height: 12pt;
+    margin: auto;
+    padding: 8px 32px;
+    text-align: center;
+}
+
+Library button.empty-library {
+    display: block;
+    margin: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 80%;
+    height: 40px;
+    background-color: white;
+    border: 0px solid white;
+}
+
+LibraryThumbnail {
+    position: relative;
+    display: block;
+    height: 125px;
+    margin: 0 auto 3% 0;
+    transition: opacity 0.3s, transform 0.1s;
+}
+
+LibraryThumbnail.hidden {
+    opacity: 0;
+}
+
+LibraryThumbnail.selected {
+    transform: scale(1.10);
+    filter: brightness(1.20);
+    border-width:2px 0 2px 0;
+    border-style:inset;
+    border-color:rgba(240,42,32,1);
+}
+
+LibraryThumbnail > img {
+    display: block;
+    width: 250px;
+    margin: auto;
+    border-radius: 2px;
+}
+
+LibraryThumbnail .label {
+    display: flex;
+    position: absolute;
+    right: 26px;
+    bottom: 10px;
+    font-size: 8pt;
+}
+
+LibraryThumbnail .label > * {
+    max-height: 26px;
+    padding: 7px 10px;
+    background-color: black;
+    margin-left: 1px;
+    font-size: 8pt;
+}
+
+LibraryThumbnail p {
+    margin: 0;
+}
+
+LibraryThumbnail .label > :first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+LibraryThumbnail .label > :last-child {
+    background-color: rgba(0,0,0,0.7);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+LibraryThumbnail input {
+    height: 12px;
+    transition: 0.1s;
+}
+
+LibraryThumbnail input:hover {
+    transform: scale(1.2);
+    border-radius: 3px !important;
+}
+
+LibraryThumbnail button {
+    display: flex;
+    color: white;
+    margin: 0 !important;
+    border: solid 0px black;
+    transition: 0.1s;
+}
+
+LibraryThumbnail .label > img {
+    max-height: 12px;
+}
+
+LibraryThumbnail button img {
+    max-height: 12px;
+    margin-right: 6px;
+}
+
+LibraryThumbnail button:hover {
+    transform: scale(1.2);
+    border-radius: 3px !important;
+}
+
+LibraryThumbnail button.cancel {
+    background-color: white;
+    color: black;
+}
+
+
+Toolbar {
+    overflow: scroll;
+    overflow-x: hidden;
+    border-top: 0px solid black;
+    transition: width 0.25s;
+    flex-shrink: 0;
+    width: 100px;
+}
+
+Toolbar.hidden {
+    width: 0;
+    opacity:0.3;
+}
+
+span.disabled {
+    opacity:0.3;
+}
+
+input.disabled {
+    opacity:0.3;
+}
+
+Toolbar.expanded {
+    width: 348px;
+    opacity:1;
+}
+
+Toolbar h2 {
+	color:#161616;
+	padding:0;
+}
+
+Toolbar.expanded h2 {
+	margin: 0;
+	width: 330px;
+	padding: 12px 24px 24px 0;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	opacity:1;
+	text-align: right;
+	color:white;
+	display:block;
+	position: relative;
+	cursor: pointer;
+}
+
+
+Toolbar::-webkit-scrollbar {
+    display: none;
+}
+
+Toolbar ul {
+    margin: 16px 0;
+    opacity: 0.3;
+}
+
+Toolbar.expanded ul {
+	opacity:1.0;
+}
+
+Toolbar li {
+    display: block;
+    text-align: center;
+    width: 348px;
+    display: flex;
+    flex-direction: row;
+}
+
+Toolbar li div.spacer {
+    height: 40px;
+}
+
+Toolbar li input[type=image] {
+    width: 100px;
+    height: 18px;
+    padding: 18px 0;
+}
+
+Toolbar li label {
+    line-height: 54px;
+    border: none;
+    background-color: transparent;
+    color: #888;
+    font-size: 6pt;
+    text-transform: uppercase;
+    padding-right: 16px;
+    letter-spacing: 1px;
+}
+
+Toolbar li input[type=button] {
+    line-height: 54px;
+    border: none;
+    background-color: transparent;
+    color: #888;
+    font-size: 5.5pt;
+    text-transform: uppercase;
+    padding-right: 24px;
+}
+
+Toolbar li input[type=radio] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+Toolbar li input[type=radio]:checked + span {
+    color: white;
+}
+
+Toolbar li input[type=range] {
+    flex-grow: 1;
+    height: 54px;
+}
+
+Toolbar li input[type=range]:before {
+    content: var(--tooltip);
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 -20px;
+    height: 0;
+    width: 40px;
+    text-align: center;
+    left: calc(6px + var(--tooltip-pos) * 0.93);
+    color: white;
+}
+
+Player footer div input[type=range]:before {
+    content: var(--tooltip);
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 0 -20px;
+    height: 0;
+    width: 40px;
+    font-size: xx-small;
+    text-align: center;
+    left: calc(6px + var(--tooltip-pos) * 0.90);
+    color: white;
+}
+
+Player footer div input[type=range] {
+    flex-grow: 1;
+    height: 54px;
+}
+
+Player footer div input[type=image] {
+    width: 54px;
+    height: 18px;
+    padding: 18px 0;
+}
+
+Player footer div input.toggle {
+    opacity: 0.5
+}
+
+Player footer div input.active {
+    opacity: 1;
+}
+
+Toolbar li input:hover {
+    color: white;
+}
+
+Toolbar li input[type=radio]:hover + span {
+    color: white;
+}
+
+Toolbar li div.detail {
+    width: 60px;
+    height: 54px;
+}
+
+Toolbar li input[type=image]:last-child {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+Toolbar li input[type=image]:last-child:active {
+    opacity: 0.5;
+}
+
+Toolbar li input.toggle {
+    opacity: 0.5
+}
+
+Toolbar li input.active {
+    opacity: 1;
+}
+
+Player {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+Player > div {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+Player figure {
+    width:50%;
+    margin: auto;
+    text-align: center;
+    background-image: url("assets/radiate-invert.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:50% auto;
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+	display: block;
+	position: relative;
+}
+
+Player figure:hover{
+    background-size:30% auto;
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+
+Player figure img {
+	padding:64px 0;
+	margin-top:-4px;
+}
+
+Player embed {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transition: opacity 0.25s;
+    /* width, height & centering is computed in player.js */
+}
+
+Player embed.show {
+    opacity: 1;
+}
+
+Player header {
+    flex: 0 0 60px;
+}
+
+Player header input {
+    max-height: 16px;
+    padding: 16px;
+    float: right;
+    margin: 0 auto;
+    cursor: default;
+    background-color: rgba(240,42,32,1);
+    position:relative;
+    display:block;
+    z-index:10;
+    right:-76px;
+}
+
+Player header input:hover {
+    background-color: rgba(190,40,30,1);
+}
+
+Player footer {
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 65px;
+    transform: translateY(100%);
+    transition: transform 0.25s;
+}
+
+Player footer.show {
+    transform: translateY(0);
+}
+
+Player footer ul {
+    margin: auto;
+    font-size: 7.5pt;
+    line-height: 11pt;
+    color: white;
+    text-align: right;
+    margin-left:32px;
+}
+
+Player footer ul li:last-child {
+    opacity: 0.5;
+}
+
+Player footer div {
+    position: relative;
+    flex-grow: 1;
+}
+
+Player footer .track {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #555 0, #555 1px, transparent 1px);
+    background-size: 4px 100%;
+    border-radius:4px;
+}
+
+Player footer input.play {
+    background: url('assets/play.svg') no-repeat center;
+    background-size: 100%;
+    border: none;
+    width: 20px;
+    height: 100%;
+    margin-right: 32px;
+    transition: 0.1s;
+}
+
+Player footer input.play:hover {
+    opacity: 0.9;
+}
+
+Player footer input.play.pause {
+    background: url('assets/pause.svg') no-repeat center;
+    background-size: 100%;
+}
+
+Player footer input.addPoint {
+    max-width: 18px;
+    max-height: 18px;
+    margin-left: 32px;
+    transition: transform 0.15s;
+}
+
+Player footer input.addPoint:hover {
+    transform: scale(1.2);
+}
+
+Player footer input.addPoint.remove {
+    transform: rotateZ(45deg);
+}
+
+Player footer input.addPoint.remove:hover {
+    transform: scale(1.2) rotateZ(45deg);
+}
+
+Player footer input.addSpeed.disabled {
+    opacity:0.3;
+}
+
+Player footer input.takeStill {
+    max-width: 18px;
+    max-height: 18px;
+    margin-left: 32px;
+    transition: transform 0.15s;
+}
+
+Player footer input.takeStill:hover {
+    transform: scale(1.2);
+}
+
+Player footer input.addSpeed {
+    max-width: 18px;
+    max-height: 18px;
+    margin-left: 32px;
+    transition: transform 0.15s;
+}
+
+Player footer input.addSpeed:hover {
+    transform: scale(1.2);
+}
+
+Player footer .track-head {
+    position: absolute;
+    height: 40px;
+    width: 4px;
+    border-radius: 4px;
+    background: white;
+    margin-top: -5px;
+    margin-left: -2px;
+}
+
+Player footer .trim-head {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: white;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-left: -2px;
+    transition: transform 0.25s;
+}
+
+Player footer .trim-head:hover,
+Player footer .trim-head:active {
+    transform: scale(1.4);
+}
+
+Player footer .trim-region {
+    height: 30px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 4px;
+}
+
+@keyframes addPointAnimation {
+    from {
+        transform: scale(4);
+        border-color: white;
+    }
+    to {
+        transform: scale(1);
+        border-color: red;
+    }
+}
+
+Player footer div.point {
+    position: absolute;
+    margin: 6px -9px;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 20px;
+    border: 7px solid red;
+
+    animation: 0.25s addPointAnimation;
+}
+
+Player footer div.follow {
+    position: absolute;
+    height: 30px;
+    background-color: rgba(255, 255, 255,0.46);
+    background-image: url("assets/range-pattern.png");
+    background-repeat: repeat;
+    border-radius: 4px; 
+}
+
+div.follow:before,
+div.follow:after {
+    position: relative;
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 3px;
+    margin: 12px -3px;
+}
+
+div.follow:after {
+    left: 100%;
+}
+
+Player div.zoomRangeContainer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height:2px;
+    text-align: center;
+}
+
+span.zoomRange {
+    border-radius: 2px;
+    background: rgba(128, 128, 128, 0.8);
+    width: 30px;
+    height:2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    display: inline-block;
+    opacity: 0;
+}
+
+.fadeInAndOut {
+    animation: fade 1.5s ease-in forwards;
+}
+
+@keyframes fade {
+  0% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+span.zoomRange.current {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+Player footer div.speed {
+    position: absolute;
+    height: 15px;
+    border-radius: 4px; 
+    bottom: 0;
+    vertical-align: middle;
+    background: rgba(231, 65, 50, .46);
+    pointer-events: none;
+}
+
+Player footer div.speed.current {
+    background: rgba(231, 65, 50, .76);
+    height: 30px;
+}
+
+Player footer div.speed .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    display:flex;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -125px;
+    margin-bottom: 20px;
+    pointer-events: auto; 
+  }
+  
+  Player footer div.speed.current .tooltiptext {
+    visibility: visible;
+  }
+
+
+Player footer div.speed.current .speed-head {
+    visibility: visible;
+}
+Player footer div.speed .speed-head {
+    pointer-events:all;
+    position: absolute;
+    height: 30px;
+    width: 4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, .8);
+    margin-left: -2px;
+    display:inline-block;
+    transition: transform 0.25s;
+    visibility: hidden;
+}
+Player footer .speed-head:hover,
+Player footer .speed-head:active {
+    transform: scale(1.4);
+}
+
+Player footer .speed-head-right {
+    right:0;
+    top:0;
+}
+
+.dialog-background {
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}
+
+Dialog {
+    display: block;
+    transition: all 0.35s;
+    position: absolute;
+    padding: 0;
+    border-radius: 5px;
+    border: 0 solid white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+/*     transform: translateY(40px); */
+/*     opacity: 0; */
+}
+
+/* Dialog .show {
+    transform: translateY(0);
+    opacity: 1;
+} */
+
+Dialog button {
+    font-size: 9pt;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #e2e0e0;
+}
+
+Dialog button.destructive {
+    color: white;
+    background-color: #f31b1b;
+    border-color: #b90b0b;
+}
+
+Dialog button.destructive:active {
+    background-color: red;
+}
+
+Dialog button:disabled {
+    opacity: 0.5;
+}
+
+Dialog button:active {
+    background-color: #f9f9f9;
+}
+
+/* Dialog button:disabled:active {
+    background-color: white;
+} */
+
+Dialog ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+Dialog ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+Dialog ul li > :nth-child(2) {
+    flex-grow: 1;
+}
+
+Dialog ul li > :nth-child(3) {
+    display: flex;
+    flex-direction: column;
+}
+
+Dialog img {
+    padding: 0 20px 20px 20px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+Dialog select {
+    margin: 0 20px;
+    width: 110px;
+    font-size: 9pt;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px solid #e2e0e0;
+}
+
+Dialog select:disabled {
+    opacity: 0.5;
+}
+
+Dialog select:focus {
+    outline: none;
+    box-shadow: 0 0 3px rgb(0, 139, 255);
+}
+
+Dialog ul button {
+    margin: 2px 20px;
+}
+
+Dialog h1 {
+    font-size: 10pt;
+    font-weight:600;
+    padding:0;
+    margin: 4px 0;
+    letter-spacing: 0.25px;
+}
+
+Dialog h2 {
+    font-size: 12px;
+    font-weight: 300;
+    color: #888;
+    padding: 0;
+    margin: 10px 0;
+}
+
+Dialog header {
+    display: flex;
+    font-size: 14pt;
+    padding: 20px;
+    margin: 0;
+}
+
+Dialog header h1 {
+    flex-grow: 1;
+    align-self: center;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+Dialog header button {
+    align-self: center;
+}
+
+Dialog section {
+    background-color: #f5f4f4;
+    padding: 8px;
+}
+
+Dialog section progress {
+    display: block;
+    width: 70%;
+    margin: auto;
+}
+
+Dialog footer {
+    display: flex;
+    justify-content:  flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 16px;
+    border-radius:0 0 4px 4px;
+}
+
+Dialog footer button {
+    margin: 3px;
+}
+
+Dialog footer button.destructive {
+    align-self: flex-start;
+}
+
+Tooltip {
+    position: fixed;
+    display: inline-block;
+    transform: translate(-100%, -50%);
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px 30px;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+Tooltip h1 {
+    font-size: 8pt;
+    font-weight: normal;
+    padding: 0;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+Tooltip h2 {
+    padding: 0;
+    font-size: 8pt;
+    color: rgba(255,255,255,0.6);
+}
+
+Settings {
+    display: flex;
+    color: black;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 285px;
+    right: 0;
+    flex-direction: column;
+}
+
+Settings h1 {
+    margin: 0;
+    padding: 20px 40px;
+}
+
+Settings section {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0 0px 40px;
+    border-top: 1px solid #eaeaea;
+}
+
+Settings section h2 {
+    color: black;
+    align-self: center;
+}
+
+Settings section h3 {
+    padding: 0;
+    flex-grow: 1;
+    text-align: right;
+    text-transform: none;
+    align-self: center;
+}
+
+Settings section button {
+    width: 80px;
+    height: 30px;
+    margin: 30px 40px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: 0px solid black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+Settings section button:hover {
+    background-color: #ddd;
+}
