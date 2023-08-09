@@ -1,4 +1,4 @@
-# RyloDesktopApp
+# RyloDesktopApp - Modified French & Touch Bar Version for MacOs
 Rylo Desktop App Remake
 
 INSTALL NOTES
