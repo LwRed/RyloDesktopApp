@@ -3,9 +3,10 @@ Rylo Desktop App Remake
 
 INSTALL NOTES
 ---
-You need a Mac with Intel or M1/MX chip
-In the terminal / Visual Studio Code > npm install
-In the node_modules, replace the automaticaly installed core-js files with the uncompressed core-js.zip files stored in /bin folder. For Rylo app to Work, you nedd these modified core-js files.
+You need a Mac with Intel or M1/Mx chip
+With Visual Studio Code or Js Editor :
+In the terminal in Visual Studio Code > npm install
+In the node_modules, replace the automaticaly installed standard "core-js" files with the uncompressed core-js.zip files stored in /bin folder (For Rylo app to Work, you need these modified "core-js" files).
 Don't delele /bin folder
 
 RUN STEP
@@ -17,3 +18,5 @@ BUILD STEP
 npm run build
 
 Enjoy !
+
+For now, Touch Bar addition French version
