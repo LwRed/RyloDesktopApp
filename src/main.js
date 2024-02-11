@@ -196,13 +196,6 @@ const onRunExport = () => {
     type: 'runExport' 
   });
 };
-//Sending to VideoExportView.js
-const onRunExportMP4 = () => {
-  const window = BrowserWindow.getFocusedWindow();
-  window.webContents.send('render-actions', { 
-    type: 'runExportMP4' 
-  });
-};
 
 //Receiving from EditorView.js, VideoExportDialog.js
 ipcMain.on('main-actions', (event, data = {}) => {
@@ -257,9 +250,14 @@ function initTouchBarFromEditorView() {
       new TouchBarLabel({ label: 'Clic droit pour Suivre', textColor: '#FFFFFF' }),
     ]
   });
+    //window.setTouchBar(touchBar);
+  // ✔️ This will only set the value if the input exists
+if (touchBar) {
   window.setTouchBar(touchBar);
 }
+}
 
+/*
 //Create Touch Bar from Editor View Options
 function initTouchBarFromExportView() {
   const window = BrowserWindow.getFocusedWindow();
@@ -281,11 +279,19 @@ function initTouchBarFromExportView() {
           onRunExport();
           console.log('Démarrer Export');
         },
-      })
+      }),
     ]
   });
+    //window.setTouchBar(touchBar);
+  // ✔️ This will only set the value if the input exists
+if (touchBar) {
   window.setTouchBar(touchBar);
 }
+}
+
+*/
+
+
 
 //Create Touch Bar from Editor View with Running Export
 function initTouchBarFromExportViewRunning() {
@@ -303,7 +309,12 @@ function initTouchBarFromExportViewRunning() {
       })
     ]
   });
+  //window.setTouchBar(touchBar);
+  // ✔️ This will only set the value if the input exists
+if (touchBar) {
   window.setTouchBar(touchBar);
 }
+}
+
 
 // END TOUCH BAR SECTION //
