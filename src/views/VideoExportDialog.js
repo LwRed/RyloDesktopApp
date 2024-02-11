@@ -21,7 +21,7 @@ const state = {
   video: 'hd',
   format: 'h264',
   sound: 'on',
-  ending: 'light',
+  ending: 'none',
 };
 
 const form = [
@@ -44,7 +44,7 @@ const form = [
     },
     details: {
       h264: ['H.264', 'Compromis idéal entre taille de fichier, qualité et temps d\'encodage'],
-      h265: ['HEVC (H.265)', 'Meilleur rapport qualité / taille de fichier mais très lent'],
+      h265: ['HEVC (H.265)', 'Meilleur rapport qualité / taille de fichier mais encodage plus lent'],
       prores: ['ProRes 422', 'Taille de fichier importante mais rapide et qualité parfaite. Le format d\'Apple est fait pour le retraitement professionnel'],
     },
   },
@@ -55,8 +55,8 @@ const form = [
       return (Editor.edits.volume == 0 || Editor.edits.speed > 1) ? [] : ['on', 'off'];
     },
     details: {
-      on: ['Activé', 'Le son sera rendu au niveau {}%'],
-      off: ['Désactivé', 'Le son ne sera pas rendu'],
+      on: ['Activé', 'Le son sera encodé en AAC avec un volume de {}%'],
+      off: ['Désactivé', 'Le son ne sera pas encodé'],
     },
   },
   {
@@ -88,21 +88,28 @@ function onCancel() {
     Exports.handle.cancel();
     Exports.handle = null;
   }
+  
    //And Sending Message to main.js
    ipcRenderer.send('main-actions', {
     type: 'cancelledExport'
   })
   //Sending Message to main.js for Touch Bar Creation
+  
   ipcRenderer.send('main-actions', {
     type: 'openedEditorView'
   })
+  
 }
 
 function onExport() {
-  //And Sending Message to main.js
+  //And Sending Message to main.js for Touch Bar Creation
+  
   ipcRenderer.send('main-actions', {
     type: 'runnedExport'
   })
+  
+
+ 
   ipcRenderer.send('save-dialog', {
     title: 'Sauvegarder',
     filters: [
@@ -111,27 +118,17 @@ function onExport() {
     defaultPath: `*/${path.parse(Editor.file).name}_export`,
   }, 'save-file-chosen-video');
 }
-function onExportMP4() {
-  //And Sending Message to main.js
-  ipcRenderer.send('main-actions', {
-    type: 'runnedExport'
-  })
-  ipcRenderer.send('save-dialog', {
-    title: 'Sauvegarder',
-    filters: [
-      { name: 'Vidéo', extensions: ['mp4'] }, //mov
-    ],
-    defaultPath: `*/${path.parse(Editor.file).name}_export`,
-  }, 'save-file-chosen-video');
-}
+
 
 ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
   state.file = message;
   if (!state.file) {
     //Sending Message to main.js for Touch Bar Creation
+    /*
   ipcRenderer.send('main-actions', {
     type: 'openedExportView'
   })
+  */
     return;
   }
 
@@ -173,9 +170,11 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
     if (success) {
       Exports.progress = 1.0;
       //Sending Message to main.js for Touch Bar Creation
+      
      ipcRenderer.send('main-actions', {
       type: 'openedEditorView'
     })
+    
     }
     Exports.handle = null;
     m.redraw();
@@ -183,9 +182,11 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
     if (!success) {
       alert('Une erreur est survenue pendant le rendu');
       //Sending Message to main.js for Touch Bar Creation
+      /*
      ipcRenderer.send('main-actions', {
       type: 'openedEditorView'
     })
+    */
     }
 
     if (success && !wasCancelled) {
@@ -204,9 +205,11 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
 module.exports = {
   oninit() {
     //Sending Message to main.js for Touch Bar Creation
+    /*
     ipcRenderer.send('main-actions', {
       type: 'openedExportView'
     })
+    */
 
 
     if (Editor.edits.volume == 0 || Editor.edits.speed > 1) {
@@ -251,7 +254,7 @@ module.exports = {
 
       m(Dialog.footer, [
         m('button', { onclick: onCancel }, 'Annuler'),
-        Exports.handle ? [] : m('button', { onclick: onExport }, 'Exporter en Mov')
+        Exports.handle ? [] : m('button', { onclick: onExport }, 'Exporter Mov'),
       ]),
     ]);
   },
@@ -262,6 +265,8 @@ module.exports = {
 };
 
 // TOUCH BAR SECTION - DO NOT UNIFY CASE IN IPCRENDERER //
+
+
 
 //Receiving Message from main.js
 ipcRenderer.on('render-actions', (event, data = {}) => {
@@ -275,15 +280,21 @@ ipcRenderer.on('render-actions', (event, data = {}) => {
   }
 })
 
+
+
+/*
+
 //Receiving Message from main.js
 ipcRenderer.on('render-actions', (event, data = {}) => {
   switch (data.type) {
     case 'runExport':
       onExport();
-
+      m.redraw();
+      
     default:
       // no-op
   }
 })
 
+*/
 
