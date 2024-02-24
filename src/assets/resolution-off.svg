@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>HD Video 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="HD-Video-4" transform="translate(2.000000, 2.000000)" stroke="#000000" stroke-width="4">
+            <polyline id="Line" points="0 32 0 0 30 0"></polyline>
+            <polyline id="Line" points="64 0 96 5.88418203e-15 96 30"></polyline>
+            <polyline id="Line" points="96 64 96 96 66 96"></polyline>
+            <polyline id="Line" points="32 96 0 96 1.88737914e-15 66"></polyline>
+        </g>
+    </g>
+</svg>
