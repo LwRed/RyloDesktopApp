@@ -9,6 +9,8 @@ In the terminal in Visual Studio Code > npm install
 In the node_modules, replace the automaticaly installed standard "core-js" files with the uncompressed core-js.zip files stored in /bin folder (For Rylo app to Work, you need these modified "core-js" files).
 Don't delele /bin folder
 
+If the install fails, it is due to errors in npm electron-builder (you can remove it)
+
 RUN STEP
 ---
 In the Terminal / Visual Studio Code > npm start
