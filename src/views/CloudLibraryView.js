@@ -13,7 +13,7 @@ module.exports = {
       remoteImgs = data.files.map(a => `https://services.rylo.com/api/v1/u/storage/thumbnail?file_uuid=${a.fileUuid}`);
     })
     .catch(function (e) {
-      console.log(e);
+      //console.log(e); // Beta 16 : on masque les erreurs
     });
   },
   view() {

@@ -14,11 +14,16 @@ const player = require('../player');
 
 const utils = require('../utils');
 
+//Beta15 - Declaration de variable globale
+qhdVideo = false; // 3k bool
+uhdVideo = false; // 4k bool
+
 let wasCancelled = false;
 
 const state = {
   file: null,
   video: 'hd',
+  resolution : 'off',
   format: 'h264',
   sound: 'on',
   ending: 'none',
@@ -32,8 +37,18 @@ const form = [
       return Editor.asset && Editor.asset.is180() ? ['hd'] : ['hd', '360'];
     },
     details: {
-      hd: ['HD classique', 'Format standard pour lecture sur les écrans d\'ordinateurs et TV'],
-      360: ['Vidéo HD 360°', 'Vidéo sphérique 360° pour affichage en réalité virtuelle'],
+      hd: ['Vidéo 2d', 'Format standard pour lecture sur les écrans d\'ordinateurs et TV'],
+      360: ['Vidéo 360°', 'Format sphérique 360° pour affichage en réalité virtuelle'],
+    },
+  },
+  {
+    name: 'resolution',
+    title: 'Choix de résolution',
+    values: ['qhd', 'uhd', 'off'],
+    details: {
+      qhd: ['QHD 1620p', 'Encodage en 1620p (3k), idéal pour source 5.8k'],
+      uhd: ['UHD 2160p', 'Encodage en Ultra HD 2160p (4k), expérimental'],
+      off: ['Désactivé', 'Vidéo standard en 1080p ou pleine résolution pour le format 360°'],
     },
   },
   {
@@ -44,8 +59,8 @@ const form = [
     },
     details: {
       h264: ['H.264', 'Compromis idéal entre taille de fichier, qualité et temps d\'encodage'],
-      h265: ['HEVC (H.265)', 'Meilleur rapport qualité / taille de fichier mais encodage plus lent'],
-      prores: ['ProRes 422', 'Taille de fichier importante mais rapide et qualité parfaite. Le format d\'Apple est fait pour le retraitement professionnel'],
+      h265: ['H.265 HEVC', 'Meilleure qualité mais nécessite un décodeur matériel ou logiciel HEVC'],
+      prores: ['ProRes 422', 'Taille de fichier importante mais rapide et qualité parfaite. Le format d\'Apple est fait pour le retraitement professionnel.'],
     },
   },
   {
@@ -103,7 +118,6 @@ function onCancel() {
 
 function onExport() {
   //And Sending Message to main.js for Touch Bar Creation
-  
   ipcRenderer.send('main-actions', {
     type: 'runnedExport'
   })
@@ -124,11 +138,9 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
   state.file = message;
   if (!state.file) {
     //Sending Message to main.js for Touch Bar Creation
-    /*
   ipcRenderer.send('main-actions', {
     type: 'openedExportView'
   })
-  */
     return;
   }
 
@@ -150,7 +162,10 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
   } else {
     let dims = Editor.edits.aspect;
     dims = (dims[0] == 1 && dims[1] == 1) ? [1080, 1080] : dims.map(a => a * 120);
-    Exports.handle.setDimensions(dims[0], dims[1]);
+    //Beta15 - Test dimensions 2k
+    if (qhdVideo == true) {Exports.handle.setDimensions(dims[0]*1.5, dims[1]*1.5);}
+    else if (uhdVideo == true) {Exports.handle.setDimensions(dims[0]*2, dims[1]*2);}
+    else {Exports.handle.setDimensions(dims[0], dims[1]);}
   }
 
   wasCancelled = false;
@@ -162,15 +177,19 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
   Exports.handle.setOutroType(state.ending, shotOnImg, logoImg, outroSoundPath);
   Exports.handle.start((progress) => {
     Exports.progress = progress;
-    m.redraw();
+    //m.redraw();
     ipcRenderer.send('export-progress', progress);
+    //Beta14 - ipcRenderer for Export Progress on Touch Bar
+    ipcRenderer.send('main-actions', {
+      type: 'runnedExport'
+    })
+    m.redraw();
   }, (success) => {
     Dialog.pop();
     // Timelapse means that we don't always set progress to 1.0 for analytics. Force it.
     if (success) {
       Exports.progress = 1.0;
       //Sending Message to main.js for Touch Bar Creation
-      
      ipcRenderer.send('main-actions', {
       type: 'openedEditorView'
     })
@@ -182,17 +201,16 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
     if (!success) {
       alert('Une erreur est survenue pendant le rendu');
       //Sending Message to main.js for Touch Bar Creation
-      /*
      ipcRenderer.send('main-actions', {
       type: 'openedEditorView'
     })
-    */
     }
 
     if (success && !wasCancelled) {
       const notification = new Notification('Export de la vidéo réussi !', {
         body: 'Cliquez ici pour ouvrir le Finder',
-        silent: true,
+        //silent: true,
+        silent: false,
       });
 
       notification.onclick = () => {
@@ -205,11 +223,9 @@ ipcRenderer.on('save-file-chosen-video', (eventEmitter, message) => {
 module.exports = {
   oninit() {
     //Sending Message to main.js for Touch Bar Creation
-    /*
     ipcRenderer.send('main-actions', {
       type: 'openedExportView'
     })
-    */
 
 
     if (Editor.edits.volume == 0 || Editor.edits.speed > 1) {
@@ -233,12 +249,25 @@ module.exports = {
           ]),
           entry.values.length > 1 ? m('select', {
             name: entry.name,
-            disabled: Exports.handle !== null || (entry.name == 'ending' && state.video !== 'hd'),
+            disabled: Exports.handle !== null || (entry.name == 'ending' && state.video !== 'hd') || (entry.name == 'resolution' && state.video !== 'hd'),
             selectedIndex: selIdx(entry),
             onchange() {
               state[entry.name] = entry.values[this.selectedIndex];
               if (state.video === '360') {
+                state.resolution = 'off',
                 state.ending = 'none';
+              }
+              if (state.resolution === 'qhd') {
+                qhdVideo = true;
+                uhdVideo = false;
+              }
+              else if (state.resolution === 'uhd') {
+                qhdVideo = false;
+                uhdVideo = true;
+              }
+              else if (state.resolution === 'off') {
+                qhdVideo = false;
+                uhdVideo = false;
               }
             }
           }, entry.values.map((val, idx) => {
@@ -246,6 +275,10 @@ module.exports = {
           })) : []
         ]))
       ),
+
+
+       
+
 
       Exports.handle ? m('section', m('progress', {
         value: Exports.progress,
@@ -266,35 +299,18 @@ module.exports = {
 
 // TOUCH BAR SECTION - DO NOT UNIFY CASE IN IPCRENDERER //
 
-
-
 //Receiving Message from main.js
 ipcRenderer.on('render-actions', (event, data = {}) => {
   switch (data.type) {
     case 'cancelExport':
       onCancel();
       m.redraw();
-
-    default:
-      // no-op
-  }
-})
-
-
-
-/*
-
-//Receiving Message from main.js
-ipcRenderer.on('render-actions', (event, data = {}) => {
-  switch (data.type) {
     case 'runExport':
       onExport();
       m.redraw();
-      
     default:
       // no-op
   }
 })
 
-*/
 
