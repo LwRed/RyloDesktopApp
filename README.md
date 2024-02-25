@@ -10,6 +10,7 @@ In the node_modules, replace the automaticaly installed standard "core-js" files
 Don't delele /bin folder
 
 If the install fails, it is due to errors in npm electron-builder (you can remove it)
+version 1.0.8b15 : Electron-Builder remplaced bay Electron-Packager to avoid bugs
 
 RUN STEP
 ---
