@@ -1,8 +1,8 @@
 const electron = require('electron');
 const { ipcMain, protocol, Menu } = require('electron');
 // Start - Touch Bar Declare
-const { TouchBar } = require('electron');
-const { TouchBarLabel, TouchBarButton, TouchBarSpacer, TouchBarSegmentedControl } = TouchBar;
+const { TouchBar, nativeImage } = require('electron');
+const { TouchBarLabel, TouchBarButton, TouchBarSpacer } = TouchBar;
 // End - Touch Bar Declare
 
 const { app } = electron;
@@ -14,6 +14,9 @@ const { autoUpdater } = require('electron-updater');
 const path = require('path');
 const menu = require('./menu');
 const CrashReporter = require('./crashreporter');
+const { progress } = require('./models/Exports');
+// Beta14 - Declaration de variable globale pourcentage
+var pourcentage = progress;
 
 let win;
 let requestedFile = null;
@@ -61,6 +64,7 @@ app.on('ready', () => {
     win.show();
     autoUpdater.checkForUpdatesAndNotify();
 
+    autoUpdater.updateConfigPath = `${app.getAppPath()}.unpacked/bin/app-update.yml`;
     if (!isPackaged) {
       autoUpdater.updateConfigPath = path.join(__dirname, '../dev-app-update.yml');
     }
@@ -96,8 +100,14 @@ app.on('window-all-closed', () => {
 });
 
 app.on('export-progress', (event, progress) => {
-  if (win) {
+  if (win && progress!=1) {
     win.setProgressBar(progress < 1.0 ? progress : -1);
+    //Beta14 - Export Progress % on Touch Bar
+    pourcentage = progress;
+  }
+  else
+  {
+    pourcentage = 0;
   }
 });
 
@@ -206,59 +216,56 @@ ipcMain.on('main-actions', (event, data = {}) => {
       return initTouchBarFromExportView();
     case 'runnedExport':
       return initTouchBarFromExportViewRunning();
-    case 'playedStopped':
-      //return initTouchBarWithJouee();
-    case 'deletedPoint':
-      //return initTouchBarWithAdd();
-
     default:
       // no-op
   }
 })
 
+
 //Create Touch Bar from Editor View Options
 function initTouchBarFromEditorView() {
   const window = BrowserWindow.getFocusedWindow();
 
+  const isPackaged = !process.defaultApp;
+  let addPointImage = nativeImage.createFromPath(`${app.getAppPath()}.unpacked/src/assets/add-point.png`).resize({ height: 16 });
+  if (!isPackaged) {
+    addPointImage = nativeImage.createFromPath(`${__dirname}/assets/add-point.png`).resize({ height: 16 });
+    //console.log(`${__dirname}/assets/add-point.png`);
+  }
+  let deletePointImage = nativeImage.createFromPath(`${app.getAppPath()}.unpacked/src/assets/delete-point.png`).resize({ height: 16 });
+  if (!isPackaged) {
+    deletePointImage = nativeImage.createFromPath(`${__dirname}/assets/delete-point.png`).resize({ height: 16 });
+    //console.log(`${__dirname}/assets/delete-point.png`);
+  }
+  let playPauseImage = nativeImage.createFromPath(`${app.getAppPath()}.unpacked/src/assets/play.png`).resize({ height: 16 });
+  if (!isPackaged) {
+    playPauseImage = nativeImage.createFromPath(`${__dirname}/assets/play.png`).resize({ height: 16 });
+    //console.log(`${__dirname}/assets/play.png`);
+  }
+
   const touchBar = new TouchBar({
     items: [
-      new TouchBarButton({
-        label: 'Ajouter Point',
-        backgroundColor: '#F02A20',
-        click: () => {
-          onAddPoint();
-          console.log('Add Point');
-        },
+      new TouchBarButton({label: 'Ajouter Point', backgroundColor: '#F02A20', icon: addPointImage, iconPosition: 'left',
+        click: () => {onAddPoint();},
       }),
-      new TouchBarButton({
-        label: 'Lire / Arrêter',
-        backgroundColor: '#66A7FF',
-        click: () => {
-          onPlayStop();
-          console.log('Play Pause');
-        },
+      new TouchBarButton({label: 'Lire / Arrêter', backgroundColor: '#66A7FF', icon: playPauseImage, iconPosition: 'left',
+        click: () => {onPlayStop();},
       }),
-      new TouchBarButton({
-        label: 'Supprimer Point',
-        backgroundColor: '#F02A20',
-        click: () => {
-          onDelPoint();
-          console.log('Remove Point');
-        },
+      new TouchBarButton({label: 'Supprimer Point', backgroundColor: '#696969', icon: deletePointImage, iconPosition: 'left',
+        click: () => {onDelPoint();},
       }),
       new TouchBarSpacer({ size: 'flexible' }),
       new TouchBarLabel({ label: 'Clic droit pour Suivre', textColor: '#FFFFFF' }),
     ]
   });
-    //window.setTouchBar(touchBar);
-  // ✔️ This will only set the value if the input exists
-if (touchBar) {
+// ✔️ This will only set the value if the input exists
+if (window && touchBar) {
   window.setTouchBar(touchBar);
 }
 }
 
-/*
-//Create Touch Bar from Editor View Options
+
+//Create Touch Bar from Export View Options
 function initTouchBarFromExportView() {
   const window = BrowserWindow.getFocusedWindow();
 
@@ -269,49 +276,46 @@ function initTouchBarFromExportView() {
         backgroundColor: '#696969',
         click: () => {
           onCancelExport();
-          console.log('Annuler Export');
+          //console.log('Annuler Export');
         },
       }),
       new TouchBarButton({
         label: 'Exporter en Mov',
-        backgroundColor: '#F02A20',
+        backgroundColor: '#66A7FF',
         click: () => {
           onRunExport();
-          console.log('Démarrer Export');
+          //console.log('Démarrer Export');
         },
       }),
     ]
   });
     //window.setTouchBar(touchBar);
   // ✔️ This will only set the value if the input exists
-if (touchBar) {
+if (window && touchBar) {
   window.setTouchBar(touchBar);
 }
 }
-
-*/
 
 
 
 //Create Touch Bar from Editor View with Running Export
 function initTouchBarFromExportViewRunning() {
   const window = BrowserWindow.getFocusedWindow();
+  //Beta14 - Touch Bar Export Bouton
+  const btn_Exportation = new TouchBarLabel({
+  label: `${Math.round(pourcentage*100)}%`,
+  textColor: '#66A7FF',
+  });
 
   const touchBar = new TouchBar({
     items: [
-      new TouchBarButton({
-        label: 'Annuler',
-        backgroundColor: '#696969',
-        click: () => {
-          onCancelExport();
-          console.log('Annuler Export');
-        },
-      })
+      new TouchBarLabel({label: 'Exportation en cours ... ', textColor: '#66A7FF',
+      }),
+      btn_Exportation,
     ]
   });
-  //window.setTouchBar(touchBar);
-  // ✔️ This will only set the value if the input exists
-if (touchBar) {
+// ✔️ This will only set the value if the input exists
+if (window && touchBar) {
   window.setTouchBar(touchBar);
 }
 }

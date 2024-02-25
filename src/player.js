@@ -359,7 +359,7 @@ class Player {
       if (!result.success) {
         new Notification('Erreur pendant la capture Photo !', {
           body: 'Réessayez plus tard',
-          silent: true,
+          silent: false,
         });
       } else {
         if (result.is360) {
@@ -367,7 +367,7 @@ class Player {
         }
         const notification = new Notification('Photo réalisée avec succès !', {
           body: 'Cliquez ici pour ouvrir le Finder',
-          silent: true,
+          silent: false,
         });
         notification.onclick = () => {
           shell.showItemInFolder(result.filename);

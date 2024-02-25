@@ -292,9 +292,10 @@ LibraryThumbnail.hidden {
 LibraryThumbnail.selected {
     transform: scale(1.10);
     filter: brightness(1.20);
-    border-width:2px 0 2px 0;
+    border-width:2px 0px 1px 0px;
     border-style:inset;
     border-color:rgba(240,42,32,1);
+    background-color:rgba(240,42,32,1);
 }
 
 LibraryThumbnail > img {
