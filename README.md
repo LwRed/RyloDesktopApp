@@ -24,7 +24,8 @@ Enjoy !
 
 For now, Touch Bar addition French version
 
-# FONCTIONALITIES
+FUNCTIONS
+---
 
 - Fonctions Touch Bar : ajouter point, jouer & mettre en pause la vidéo, supprimer point, exporter, annuler export
 - Export 3k & 4k au lieu du 1080p d'origine
