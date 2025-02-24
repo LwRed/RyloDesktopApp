@@ -23,3 +23,25 @@ npm run build
 Enjoy !
 
 For now, Touch Bar addition French version
+
+# FONCTIONALITIES
+
+- Capture d'image par trace d'un rectangle sur l'ecran
+- Indication de la taille de la selection en pixels
+- Sauvegarde possible de l'image sur le Bureau ainsi que dans le ClipBoard
+- Incrementation des Sauvegardes automatiques
+- Fonctionne sur Windows et MacOs 64 bits
+- Aide animee (GIF)
+- Sauvegarde au format Jpg ou Png
+- Sauvegarde des options
+
+<img src="ScreenShot.png" width="640">
+<img src="ScreenShot2.png" width="640">
+
+Si vous aimez mes programmes, <a href="https://www.paypal.com/donate/?hosted_button_id=GY5LTDDPZ2HZG"> vous pouvez faire un don PayPal ;)</a>
+
+Historique des versions :
+
+v16 du 23/02/2025 = v1.0.8 Beta 12
+Correction d'un bug concernant le mode fenêtré ou plein écran de la fenêtre principale
+
