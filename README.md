@@ -26,14 +26,8 @@ For now, Touch Bar addition French version
 
 # FONCTIONALITIES
 
-- Capture d'image par trace d'un rectangle sur l'ecran
-- Indication de la taille de la selection en pixels
-- Sauvegarde possible de l'image sur le Bureau ainsi que dans le ClipBoard
-- Incrementation des Sauvegardes automatiques
-- Fonctionne sur Windows et MacOs 64 bits
-- Aide animee (GIF)
-- Sauvegarde au format Jpg ou Png
-- Sauvegarde des options
+- Fonctions Touch Bar : ajouter point, jouer & mettre en pause la vidéo, supprimer point, exporter, annuler export
+- Export 3k & 4k au lieu du 1080p d'origine
 
 <img src="rylo_macos.jpg" width="640">
 <img src="image_tb1.png" width="640">
