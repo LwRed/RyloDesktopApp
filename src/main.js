@@ -52,7 +52,9 @@ app.on('ready', () => {
     webPreferences: {
       plugins: true,
     },
-    titleBarStyle: 'hiddenInset',
+    //titleBarStyle: 'hiddenInset',
+    titleBarStyle: 'hidden',
+    trafficLightPosition: { x: 10, y: 10 },
     show: false,
   });
 
